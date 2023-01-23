@@ -1,0 +1,627 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>The ICASSP 2023 Clarity Enhancement Challenge (CEC_ICASSP2023) &#8212; pyclarity 0.2.1+56.g2faaae2 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../../_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'recipes/icassp_2023/README';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="en">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../../index.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+    <p class="title logo__title">pyclarity 0.2.1+56.g2faaae2 documentation</p>
+  
+</a>
+    
+  </div>
+
+  
+  <div class="col-lg-9 navbar-header-items">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../introduction.html">
+                        Introduction
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../recipes_doc.html">
+                        Recipes
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../CONTRIBUTING.html">
+                        Contributing to pyClarity
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../CODE_OF_CONDUCT.html">
+                        Contributor Covenant Code of Conduct
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../clarity.html">
+                        clarity package
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../recipes.html">
+                        recipes package
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+        <div class="navbar-end-item navbar-persistent--container">
+          
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+        </div>
+      
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+
+
+  
+  
+    <div class="navbar-persistent--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+    </div>
+  
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
+</div>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../introduction.html">
+                        Introduction
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../recipes_doc.html">
+                        Recipes
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../CONTRIBUTING.html">
+                        Contributing to pyClarity
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../CODE_OF_CONDUCT.html">
+                        Contributor Covenant Code of Conduct
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../clarity.html">
+                        clarity package
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../recipes.html">
+                        recipes package
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
+
+  
+  <div id="rtd-footer-container"></div>
+
+      </div>
+      <main id="main-content" class="bd-main">
+        
+        
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
+            </div>
+            
+            
+            <article class="bd-article" role="main">
+              
+  <section id="the-icassp-2023-clarity-enhancement-challenge-cec-icassp2023">
+<h1>The ICASSP 2023 Clarity Enhancement Challenge (CEC_ICASSP2023)<a class="headerlink" href="#the-icassp-2023-clarity-enhancement-challenge-cec-icassp2023" title="Permalink to this heading">#</a></h1>
+<p>Clarity challenge code for the ICASSP 2023 Clarity Enhancement Challenge.</p>
+<p>For more information please visit the <a class="reference external" href="https://claritychallenge.org/docs/icassp2023/icassp2023_intro">challenge website</a>.</p>
+<p>Clarity tutorials are <a class="reference external" href="https://claritychallenge.github.io/clarity_CC_doc/tutorials">now available</a>. The tutorials introduce the Clarity installation, how to interact with Clarity metadata, and also provide examples of baseline systems and evaluation tools.</p>
+<section id="data-structure">
+<h2>Data structure<a class="headerlink" href="#data-structure" title="Permalink to this heading">#</a></h2>
+<p>The ICASSP 2023 Clarity Enhancement Challenge is using the Clarity CEC2 dataset. To download data, please visit <a class="reference external" href="https://mab.to/KjXsa3EskhQuU">here</a>. The data is split into three packages: <code class="docutils literal notranslate"><span class="pre">clarity_CEC2_core.v1_1.tgz</span></code> [28 GB], <code class="docutils literal notranslate"><span class="pre">clarity_CEC2_train.v1_1.tgz</span></code> [69 GB] and <code class="docutils literal notranslate"><span class="pre">clarity_CEC2_hoairs.v1_0.tgz</span></code> [144 GB].</p>
+<p>Unpack packages under the same root directory using</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar<span class="w"> </span>-xvzf<span class="w"> </span>&lt;PACKAGE_NAME&gt;
+</pre></div>
+</div>
+<p><strong>Core</strong> contains metadata and development set signals, which can be used for validate existing systems</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>clarity_data
+|   hrir/HRIRs_MAT 167M
+|
+└───dev
+|   └───rooms
+|   |   |   ac 20M
+|   |   |   rpf 79M
+|   |
+|   └───interferers
+|   |   |   music 5.8G
+|   |   |   noise 587M
+|   |   |   speech 1.4G
+|   |
+|   └───scenes 39G
+|   |
+|   └───targets 1.3G
+|   |
+|   └───speaker_adapt 20M
+|
+└───metadata
+    |   scenes.train.json
+    |   scenes.dev.json
+    |   rooms.train.json
+    |   rooms.dev.json
+    |   masker_music_list.json
+    |   masker_nonspeech_list.json
+    |   masker_speech_list.json
+    |   target_speech_list.json
+    |   hrir_data.json
+    |   listeners.json
+    |   scenes_listeners.dev.json
+    |   ...
+</pre></div>
+</div>
+<p><strong>Train</strong> contains training set, which can be used to optimise a system</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>clarity_data
+└───train
+    └───rooms
+    |   |   ac 48M
+    |   |   rpf 190M
+    |
+    └───interferers
+    |   |   music 16GG
+    |   |   noise 3.9M
+    |   |   speech 4.5G
+    |
+    └───scenes 89G
+    |
+    └───targets 2.8G
+</pre></div>
+</div>
+<p><strong>HOA_IRs</strong> contains impulse responses for reproducing the scenes or for rendering more training data (scenes).</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>clarity_data
+└───train/rooms/HOA_IRs 117G
+|
+└───dev/rooms/HOA_IRs 49G
+</pre></div>
+</div>
+</section>
+<section id="baseline">
+<h2>Baseline<a class="headerlink" href="#baseline" title="Permalink to this heading">#</a></h2>
+<p>In the `baseline/’ folder, we provide code for running the baseline enhancement system and performing the objective evaluation.</p>
+<section id="enhancement">
+<h3>Enhancement<a class="headerlink" href="#enhancement" title="Permalink to this heading">#</a></h3>
+<p>The baseline enhancement simply takes the 6 channel hearing aid inputs and reduces this to a stereo hearing aid output by passing through the ‘front’ microphone signal of the left and right ear.</p>
+<p>To run the baseline enhancement system, firstly specify <code class="docutils literal notranslate"><span class="pre">root</span></code> in <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> to point to where you have installed the clarity data. You can also define your own <code class="docutils literal notranslate"><span class="pre">path.exp_folder</span></code> to store enhanced signals and evaluated results.</p>
+<p>Then run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>enhance.py
+</pre></div>
+</div>
+<p>Alternatively, you can provide the root variable on the command line, e.g.,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>enhance.py<span class="w"> </span>path.root<span class="o">=</span>/Volumes/data/clarity_CEC2_data
+</pre></div>
+</div>
+<p>The folder <code class="docutils literal notranslate"><span class="pre">enhanced_signals</span></code> will appear in the <code class="docutils literal notranslate"><span class="pre">exp</span></code> folder.</p>
+</section>
+<section id="evaluation">
+<h3>Evaluation<a class="headerlink" href="#evaluation" title="Permalink to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">evaluate.py</span></code>  will first pass signals through a provided hearing aid amplification stage using a NAL-R [<span class="xref myst">1</span>] fitting amplification and a simple automatic gain compressor. The amplification is determined by the audiograms defined by the scene-listener pairs in <code class="docutils literal notranslate"><span class="pre">clarity_data/metadata/scenes_listeners.dev.json</span></code> for the development set. After amplification, the evaluate function calculates the better-ear HASPI  [<span class="xref myst">2</span>] and better-ear HASQI  [<span class="xref myst">3</span>] scores. The average of these two is computed and returned for each signal.</p>
+<p>To run the evaluation stage, make sure that <code class="docutils literal notranslate"><span class="pre">path.root</span></code> is set in the <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> file and then run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>evaluate.py
+</pre></div>
+</div>
+<p>The full evaluation set is 7500 scene-listener pairs and will take a long time to run. A standard small set which uses 1/15 of the data has been defined and can be run with</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>evaluate.py<span class="w"> </span>evaluate.small_test<span class="o">=</span>True
+</pre></div>
+</div>
+<p>A csv file containing the HASPI, HASQI and combined scores will be generated in the <code class="docutils literal notranslate"><span class="pre">exp_folder</span></code>.</p>
+<p>When computing HASPI and HASQI, the <code class="docutils literal notranslate"><span class="pre">_target_anechoic_CH1.wav</span></code> is used as the reference, with its level normalised to match that of the corresponding <code class="docutils literal notranslate"><span class="pre">_target_CH1.wav</span></code>.</p>
+</section>
+<section id="reporting-results">
+<h3>Reporting results<a class="headerlink" href="#reporting-results" title="Permalink to this heading">#</a></h3>
+<p>Once the evaluation script has completed, the final result can be reported with</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>report_score.py
+</pre></div>
+</div>
+<p>Or if you have run the small evaluation</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>report_score.py<span class="w"> </span>evaluate.small_test<span class="o">=</span>True
+</pre></div>
+</div>
+<p>The score for the baseline enhancement is 0.185 overall (0.239 HASPI; 0.132 HASQI).</p>
+<p>Please note: HASPI and HASQI employ random thresholding noise so you will not get identical scores unless the random seed is set (in the given recipe, the random seed for each signal is set the last eight digits of the scene md5). However, if the seed is not set the differences between runs should be small (order of 1e-6).</p>
+</section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>[1] Byrne, Denis, and Harvey Dillon. “The National Acoustic Laboratories’(NAL) new procedure for selecting the gain and frequency response of a hearing aid.” Ear and hearing 7.4 (1986): 257-265.</p></li>
+<li><p>[2] Kates J M, Arehart K H. The hearing-aid speech perception index (HASPI)[J]. Speech Communication, 2014, 65: 75-93.</p></li>
+<li><p>[3] Kates, J.M. and Arehart, K.H., 2014. “The hearing-aid speech quality index (HASQI) version 2”. Journal of the Audio Engineering Society. 62 (3): 99–117.</p></li>
+</ul>
+</section>
+</section>
+
+
+            </article>
+            
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-structure">
+   Data structure
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#baseline">
+   Baseline
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#enhancement">
+     Enhancement
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#evaluation">
+     Evaluation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reporting-results">
+     Reporting results
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+</nav>
+</div>
+
+<div class="toc-item">
+  
+<div id="searchbox"></div>
+</div>
+
+<div class="toc-item">
+  
+</div>
+
+<div class="toc-item">
+  
+<div class="tocsection sourcelink">
+    <a href="../../_sources/recipes/icassp_2023/README.md.txt">
+        <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+</div>
+
+</div>
+
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+          </div>
+        </footer>
+        
+      </main>
+    </div>
+  </div>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
+
+  <footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    
+<p class="copyright">
+
+    &copy; Copyright 2022, pyclarity authors.<br>
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="theme-version">
+    Built with the
+    <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">
+        PyData Sphinx Theme
+    </a>
+    0.12.0.
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br>
+</p>
+
+  </div>
+  
+</div>
+  </footer>
+  </body>
+</html>
